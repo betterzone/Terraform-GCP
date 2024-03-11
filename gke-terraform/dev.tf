@@ -9,7 +9,7 @@ provider "kubernetes" {
 
 module "gke" {
   source                     = "terraform-google-modules/kubernetes-engine/google"
-  project_id                 = "matilda-demo"
+  project_id                 = "project-demo"
   name                       = "gke-test-1"
   region                     = "us-central1"
   zones                      = ["us-central1-a", "us-central1-b", "us-central1-f"]
@@ -39,7 +39,7 @@ module "gke" {
       logging_variant           = "DEFAULT"
       auto_repair               = true
       auto_upgrade              = true
-      service_account           = "terraformtestbalu@matilda-demo.iam.gserviceaccount.com"
+      service_account           = "terraformtestbalu@project-demo.iam.gserviceaccount.com"
       preemptible               = false
       initial_node_count        = 80
     },
